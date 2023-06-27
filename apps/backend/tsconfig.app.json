@@ -5,7 +5,57 @@
     "module": "commonjs",
     "types": ["node"],
     "emitDecoratorMetadata": true,
-    "target": "es2021"
+    "target": "es2021",
+    "paths": {
+      "@lib/providers": [
+        "apps/backend/libs/providers/src"
+      ],
+      "@lib/providers/*": [
+        "apps/backend/libs/providers/src/*"
+      ],
+      "@lib/entities": [
+        "apps/backend/libs/entities/src"
+      ],
+      "@lib/entities/*": [
+        "apps/backend/libs/entities/src/*"
+      ],
+      "@lib/post": [
+        "apps/backend/libs/post/src"
+      ],
+      "@lib/post/*": [
+        "apps/backend/libs/post/src/*"
+      ],
+      "@lib/errors": [
+        "apps/backend/libs/errors/src"
+      ],
+      "@lib/errors/*": [
+        "apps/backend/libs/errors/src/*"
+      ],
+      "@lib/shared": [
+        "apps/backend/libs/shared/src"
+      ],
+      "@lib/shared/*": [
+        "apps/backend/libs/shared/src/*"
+      ],
+      "@lib/auth": [
+        "apps/backend/libs/auth/src"
+      ],
+      "@lib/auth/*": [
+        "apps/backend/libs/auth/src/*"
+      ],
+      "@lib/user": [
+        "apps/backend/libs/user/src"
+      ],
+      "@lib/user/*": [
+        "apps/backend/libs/user/src/*"
+      ],
+      "@amqp/amqp-contracts": [
+        "apps/backend/libs/amqp-contracts/src"
+      ],
+      "@amqp/amqp-contracts/*": [
+        "apps/backend/libs/amqp-contracts/src/*"
+      ]
+    }
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "include": ["src/**/*.ts"]

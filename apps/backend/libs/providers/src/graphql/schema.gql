@@ -1,0 +1,132 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreatePostInput {
+  message: String!
+  title: String!
+}
+
+input CreateUserInput {
+  email: String!
+  firstname: String!
+  password: String!
+  username: String!
+}
+
+type CreateUserResponse {
+  """Дата создания пользователя"""
+  createdAt: String!
+
+  """Email пользователя"""
+  email: String!
+
+  """Имя пользователя"""
+  firstname: String!
+
+  """ID поста"""
+  id: ID!
+
+  """Логин пользователя"""
+  username: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type LoginResponse {
+  """Дата создания пользователя"""
+  createdAt: String!
+
+  """Email пользователя"""
+  email: String!
+
+  """Имя пользователя"""
+  firstname: String!
+
+  """ID поста"""
+  id: ID!
+
+  """Token пользователя"""
+  token: String!
+
+  """Логин пользователя"""
+  username: String!
+}
+
+type Mutation {
+  createPost(createPostInput: CreatePostInput!): PostResponse!
+  createUser(createUserInput: CreateUserInput!): CreateUserResponse!
+  deletePost(id: String!): Boolean!
+  deleteUser(id: String!): Boolean!
+  login(loginInput: LoginInput!): LoginResponse!
+  setPublishedPost(id: String!): PostResponse!
+  updatePost(updatePostInput: UpdatePostInput!): PostResponse!
+  updateUser(updateUserInput: UpdateUserInput!): UpdateUserResponse!
+}
+
+type PaginatedPosts {
+  data: [PostResponse!]
+  limit: Int!
+  offset: Int!
+  total: Int!
+}
+
+type PostResponse {
+  """ID автора сообщения"""
+  authorId: String!
+
+  """Дата создания поста"""
+  createdAt: String!
+
+  """ID поста"""
+  id: ID!
+
+  """Сообщение поста"""
+  message: String!
+
+  """Заголовок поста"""
+  title: String!
+
+  """Дата обновления поста"""
+  updatedAt: String!
+}
+
+type Query {
+  post(id: String!): PostResponse!
+  posts(
+    """Количество строк"""
+    limit: Int! = 15
+
+    """Пропуск строк"""
+    offset: Int! = 0
+  ): PaginatedPosts!
+}
+
+input UpdatePostInput {
+  id: ID!
+  message: String
+  title: String
+}
+
+input UpdateUserInput {
+  email: String
+  firstname: String
+  username: String
+}
+
+type UpdateUserResponse {
+  """Email пользователя"""
+  email: String!
+
+  """Имя пользователя"""
+  firstname: String!
+
+  """ID поста"""
+  id: ID!
+
+  """Логин пользователя"""
+  username: String!
+}
